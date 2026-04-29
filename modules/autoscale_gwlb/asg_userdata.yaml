@@ -1,0 +1,28 @@
+#cloud-config
+network:
+  version: 1
+  config:
+  - type: bridge
+    name: br0
+    mtu: *eth0-mtu
+    subnets:
+      - address: *eth0-private
+        type: static
+        gateway: *default-gateway
+        dns_nameservers:
+        - *eth0-dns1
+    bridge_interfaces:
+      - eth0
+  ipv6_enabled: ${IPMode}
+kernel_parameters:
+  sim:
+    - sim_geneve_enabled=1
+    - sim_geneve_br_dev=br0
+  fw:
+    - fwtls_bridge_mode_inspection=1
+    - fw_geneve_enabled=1
+bootcmd:
+    - $CGEDIR/scripts/hairpin_on.sh AwsGwlb
+runcmd:
+  - |
+    python3 /etc/cloud_config.py enableCloudWatch=\"${EnableCloudWatch}\" sicKey=\"${SICKey}\" installationType=\"autoscale\" osVersion=\"${OsVersion}\" allowUploadDownload=\"${AllowUploadDownload}\" templateVersion=\"1.0.10\" templateName=\"${TemplateName}\" templateType=\"terraform_registry\" shell=\"${Shell}\" enableInstanceConnect=\"${EnableInstanceConnect}\" passwordHash=\"${PasswordHash}\" MaintenanceModePassword=\"${MaintenanceModePassword}\" bootstrapScript64=\"${BootstrapScript}\"

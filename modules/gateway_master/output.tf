@@ -1,0 +1,51 @@
+output "vpc_id" {
+  value = module.launch_vpc.vpc_id
+}
+output "internal_rtb_id" {
+  value = aws_route_table.private_subnet_rtb.id
+}
+output "vpc_public_subnets_ids_list" {
+  value = module.launch_vpc.public_subnets_ids_list
+}
+output "vpc_private_subnets_ids_list" {
+  value = module.launch_vpc.private_subnets_ids_list
+}
+output "ami_id" {
+  value = module.launch_gateway_into_vpc.ami_id
+}
+output "availability_zone" {
+  value = module.launch_gateway_into_vpc.availability_zone
+  description = "The availability zone where the gateway is deployed"
+}
+output "zone_type" {
+  value = module.launch_gateway_into_vpc.zone_type
+  description = "The type of zone (availability-zone or local-zone)"
+}
+output "network_border_group" {
+  value = module.launch_gateway_into_vpc.network_border_group
+  description = "The network border group for the zone"
+}
+output "permissive_sg_id" {
+  value = module.launch_gateway_into_vpc.permissive_sg_id
+}
+output "permissive_sg_name" {
+  value = module.launch_gateway_into_vpc.permissive_sg_name
+}
+output "gateway_url" {
+  value = module.launch_gateway_into_vpc.gateway_url
+}
+output "gateway_url_ipv6" {
+  value = module.launch_gateway_into_vpc.gateway_url_ipv6
+}
+output "gateway_public_ip" {
+  value = module.launch_gateway_into_vpc.gateway_public_ip
+}
+output "gateway_public_ipv6" {
+  value = module.launch_gateway_into_vpc.gateway_public_ipv6
+}
+output "gateway_instance_id" {
+  value = module.launch_gateway_into_vpc.gateway_instance_id
+}
+output "gateway_instance_name" {
+  value = module.launch_gateway_into_vpc.gateway_instance_name
+}
