@@ -1,1 +1,1 @@
-# aws-lz-chkp-centralized-inspection-2arm
+# aws-lz-chkp-centralized-inspection-dual-arm
