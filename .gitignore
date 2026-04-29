@@ -1,0 +1,50 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.tfstate
+.terraform.tfstate.backup
+.terraform.lock.hcl
+crash.log
+crash.log.*
+
+# Terraform variables and plan files (sensitive)
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+override.tf
+override.tf.json
+*_override.tf
+tfplan
+tfplan.*
+tfplan.json
+
+# Local environment files
+.env
+.env.*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Keys: ignore all keys but allow public keys
+keys/*
+!keys/*.pub
+
+# Logs
+*.log
+
+# Optional: ignore node modules if present
+node_modules/
+
+# Coverage
+coverage/
+
+# Generated files and local state
+.generated/
+state.json
