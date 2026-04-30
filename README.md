@@ -1,4 +1,4 @@
-# aws-lz-chkp-centralized-inspection-dual-arm
+# AWS Check Point Centralized Inspection Dual Arm Lab
 
 AWS Centralized Inspection Landing Zone with Check Point Cloud Firewalls in a dual-arm deployment
 
